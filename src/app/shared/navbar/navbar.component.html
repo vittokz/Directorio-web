@@ -1,0 +1,70 @@
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+      <div class="dropdown button-dropdown">
+        <div ngbDropdown>
+          <a class="dropdown-toggle" ngbDropdownToggle>
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+          </a>
+           <div ngbDropdownMenu>
+             <a class="dropdown-header">Menú de opciones</a>
+             <a class="dropdown-item" ngbTooltip="Lista de categorias" placement="right" href="#">Categorias</a>
+             <a class="dropdown-item" ngbTooltip="Encuentra promociones de las empresas registradas" placement="right" href="#">Promociones</a>
+             <a class="dropdown-item" ngbTooltip="Registra tus datos de mensajero" placement="right" href="#">Mensajero</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" ngbTooltip="Busca un mensajero y utiliza su servicio" placement="right" href="#">Buscar Mensajero</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#">Contáctanos</a>
+           </div>
+         </div>
+      </div>
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Menu de opciones ">
+                Menu
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+              <li routerLinkActive="active" class="nav-item" ngbTooltip="Conozca quienes somos." routerLink="/index">
+                <a class="nav-link btn btn-primary" style="background-color: #247aeb; color: white; font-weight: 700;">
+                    <i class="now-ui-icons business_globe"></i>
+                    <p>Inicio</p>
+                </a>
+            </li>
+              <li routerLinkActive="active" class="nav-item" ngbTooltip="Conozca quienes somos." routerLink="/examples/landing">
+                <a class="nav-link btn btn-primary" style="background-color: #247aeb; color: white; font-weight: 700;">
+                    <i class="now-ui-icons business_badge "></i>
+                    <p>Quienes Somos</p>
+                </a>
+            </li>
+              <li routerLinkActive="active" routerLink="/list-empresas" class="nav-item" ngbTooltip="Lista de empresas por categorias">
+                  <a class="nav-link js-scroll-trigger btn btn-primary" style="background-color: #247aeb; color: white; font-weight: 700;">
+                      <i class="now-ui-icons business_bank"></i>
+                      <p>Empresas</p>
+                  </a>
+              </li>
+                <li routerLinkActive="active" routerLink="/registrar-empresa" class="nav-item" ngbTooltip="Registra tu empresa,servicios, promociones y lleva tu negocio a otro nivel.">
+                    <a class="nav-link btn btn-primary" style="background-color: #247aeb; color: white; font-weight: 700;" target="_blank">
+                      <i class="now-ui-icons ui-1_settings-gear-63"></i>
+                      <p>Registra Tú Empresa</p>
+                    </a>
+                </li>
+                <li routerLinkActive="active" routerLink="/login" class="nav-item" ngbTooltip="Ingresa a tu perfil y administra tu negocio.">
+                    <a class="nav-link btn" style="background-color: #247aeb; color: white; font-weight: 700;" target="_blank">
+                        <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                        <p>Ingresar</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

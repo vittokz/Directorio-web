@@ -1,0 +1,123 @@
+<div class="wrapper">
+  <div class="page-header clear-filter">
+    <div class="page-header-image rellax-header" data-rellax-speed="-7" style="background-image: url('assets/img/header.jpg');">
+
+    </div>
+      <div class="container">
+          <div class="content-center brand">
+            <h1>  <img  src="assets/img/logoDirectorioNegro.png" alt="">
+                <span style="color: rgb(248, 249, 250) !important; font-weight: bold; font-size: 32px;">
+                    Directorio Web Empresarial</span>
+            </h1>
+             
+          </div>
+                <h6 style="color: white; background-color: #247aeb; font-weight: bold; padding: 10px;" 
+                class="category category-absolute">
+                    Pensamos en las necesidades de nuestros usuarios frente a la situación mundial. La 
+                    tecnología es un medio para llevar tus servicios a todas partes.
+                </h6>
+   
+      </div>
+  </div>
+
+  <div class="main">
+    <div class="section section-images">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hero-images-container">
+                        <img src="assets/img/hero-image-1.png" alt="">
+                    </div>
+                    <div class="hero-images-container-1">
+                        <img src="assets/img/hero-image-2.png" alt="">
+                    </div>
+                    <div class="hero-images-container-2">
+                        <img src="assets/img/hero-image-3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+        <div class="section" style="background-image: url('assets/img/empresas/fondo2.jpg');
+        background-attachment: fixed; opacity: 1;">
+         <div class="container">
+            <div class="alert alert-primary" style="background-color: #247aeb; text-align: center; width: 100%;" role="alert">
+                <span style="text-align: center; font-weight: bold; font-size: 27px; font-family: 'Courier New', Courier, monospace;">
+                    Bienvenido a <span style="color: tomato; font-size: 30px">OneClick</span> Directorio Web Empresarial </span>
+            </div>            
+            <div class="row mt-5">
+                <div class="col-lg-3" *ngFor="let i of listaEmpresas">
+                    <div class="card" style="width: 100%;">
+                        <img src="{{url}}empresa/img/{{i.identidad}}/{{i.logo}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">{{i.razonSocial | uppercase}}</h5>
+                        <button class="btn btn-primary btn-lg btn-block" style="font-weight: bold;">Ver Información</button>
+                        <button class="btn btn-success btn-lg btn-block" style="font-weight: bold;">Perfil Empresa</button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div> 
+
+<!--
+      <div class="section">
+          <div class="container text-center">
+              <div class="row justify-content-md-center">
+                  <div class="col-md-12 col-lg-8">
+                      <h2 class="title">Completed with examples</h2>
+                      <h5 class="description">The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 ui kit.</h5>
+                  </div>
+              </div>
+          </div>
+      </div>
+    -->
+ 
+      <div class="section section-download" id="#download-section" data-background-color="black">
+          <div class="container">
+       
+              <div class="row justify-content-md-center sharing-area text-center">
+                <div class="text-center col-md-12 col-lg-8">
+                  <h3>Siguenos en nuestras redes sociales!!!</h3>
+                </div>
+                <div class="text-center col-md-12 col-lg-8">
+                  <a target="_blank" href="https://www.twitter.com/creativetim" class="btn btn-neutral btn-icon btn-twitter btn-round btn-lg" rel="tooltip" title="Follow us">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-neutral btn-icon btn-facebook btn-round btn-lg" rel="tooltip" title="Like us">
+                    <i class="fab fa-facebook-square"></i>
+                  </a>
+                 
+                  <a target="_blank" href="https://github.com/creativetimofficial/now-ui-kit-angular" class="btn btn-neutral btn-icon btn-github btn-round btn-lg" rel="tooltip" title="Star on Github">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+        <nav>
+            <ul style="margin: 10px;">
+                <li>
+                  <div style="padding: 10px; color: black; font-weight: 900; ">Contátenos</div>
+                </li>
+                <li>
+                  <div style="padding: 10px; color: black; font-weight: 900; "> San Juan de Pasto - Nariño</div>
+                </li>
+                <li>
+                    <div style="padding: 10px; color: black; font-weight: 900; "> Cel: 321 2880350</div>
+                </li>
+               
+            </ul>
+        </nav>
+        <div class="copyright">
+            &copy;
+          {{data | date: 'yyyy'}}, Designed by
+          <span style="color: tomato; font-size: 24px; font-weight: bold;">OneClick   </span> Colombia
+        </div>
+    </div>
+</footer>
+</div>

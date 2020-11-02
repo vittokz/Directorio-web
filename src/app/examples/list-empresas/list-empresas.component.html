@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" 
+        style="background-image: url('assets/img/bg6.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+               <h1>  <img  src="assets/img/logoDirectorioNegro.png" alt="">
+                <span style="color: rgb(248, 249, 250) !important; font-weight: bold; font-size: 32px;">
+                    Directorio Web Empresarial</span>
+            </h1>
+                
+                 
+            </div>
+        </div>
+    </div>
+   
+    <div class="container-fluid py-2" 
+    style="background-color: tomato; color: white; text-align: center; font-weight: bold; font-size: 20px; ">
+        Listado de Empresas
+    </div>
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4" *ngFor="let i of listaEmpresas">
+                <div class="shadow-lg p-1 mb-5 bg-white rounded card" style="height: 550px;">
+                    <img src="{{i.logo}}" class="card-img-top">
+                    <div class="card-body" style="background-color: rgb(248, 249, 250);">
+                      <h5 style="text-align: center;" class="card-title">{{i.razonSocial | uppercase}}</h5>
+                        <div style="border-radius: 5px;font-size: 20px; font-weight: 600; text-align: center; padding: 8px; 
+                         color: black;">
+                            Descripción
+                        </div>
+                        <div style="padding: 15px; background-color: rgb(241, 242, 243); color: black;
+                        border-radius: 5px; text-align: justify;">
+                            {{ i.descripcion.substr(0,100)  }} ...
+                        
+                        </div>
+                        <p style="text-align: center;">
+                            <button ngbTooltip="Ir a perfil de empresa" placement="bottom" 
+                            class="btn btn-primary btn-lg btn-block" (click)="irDetalle(i.id)">
+                            Ver información
+                        </button>
+                        </p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

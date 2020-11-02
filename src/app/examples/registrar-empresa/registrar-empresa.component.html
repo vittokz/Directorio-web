@@ -1,0 +1,219 @@
+<div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image rellax-header" data-rellax-speed="-8" 
+            style="background-image: url('assets/img/bg6.jpg');">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                <h1>  <img  src="assets/img/logoDirectorioNegro.png" alt="">
+                    <span style="color: rgb(248, 249, 250) !important; font-weight: bold; font-size: 32px;">
+                        Directorio Web Empresarial</span>
+                </h1>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container">
+       <hr>
+       
+            
+        <p class="category" style="font-size: 22px;">Registro de Empresa</p>
+        <div *ngIf="registado=='ok'" class="alert alert-primary" role="alert">
+            Bienvenido!!!! Se registro correctamente. A su email llegara la información de acceso a la plataforma..
+        </div>
+        <div *ngIf="registado=='error'" class="alert alert-danger" role="alert">
+            Error al registrar verifique los datos ingresados!!!!!
+        </div>
+            <form style="background: linear-gradient(70deg, rgb(246, 246, 247), white); color: black; font-size: 14px;"
+            class="form-control" [formGroup]="formRegistro">
+                    <div class="row mt-10">
+                        <div class="col-sm-6 col-lg-2">
+                            <div class="form-group">
+                            <label>Tipo Documento</label>
+                            <select formControlName="tipoDoc" class="form-control">
+                                <option value="CC">CC</option>
+                                <option value="NIT">NIT</option>
+                            </select>
+                            <div *ngIf="formRegistro.controls['tipoDoc'].invalid && formRegistro.controls['tipoDoc'].dirty" class="alert alert-danger" role="alert">
+                                Campo necesario
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-2">
+                            <label>Número Identidad</label>
+                            <div class="form-group">
+                                <input formControlName="identidad" type="text" class="form-control" />
+                                <div *ngIf="formRegistro.controls['identidad'].invalid && formRegistro.controls['identidad'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-5">
+                            <label>Razón Social</label>
+                            <div class="form-group">
+                                <input formControlName="razon" type="text" class="form-control" />
+                                <div *ngIf="formRegistro.controls['razon'].invalid && formRegistro.controls['razon'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Nombres del responsable</label>
+                            <div class="form-group">
+                                <input formControlName="nomResponsable" type="text" class="form-control" />
+                                <div *ngIf="formRegistro.controls['nomResponsable'].invalid && formRegistro.controls['nomResponsable'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mt-10">
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Apellidos del responsable</label>
+                            <div class="form-group">
+                                <input formControlName="apeResponsable" type="text" class="form-control" />
+                                <div *ngIf="formRegistro.controls['apeResponsable'].invalid && formRegistro.controls['apeResponsable'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <label>Descripción</label>
+                            <div class="form-group">
+                                <textarea formControlName="descripcion" cols="4" rows="2" class="form-control" placeholder="Describa su empresa"></textarea>
+                                <div *ngIf="formRegistro.controls['descripcion'].invalid && formRegistro.controls['descripcion'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Logo Empresa</label>
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="avatar" (change)="onFileSelect($event)" />
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Datos de localización</li>
+                        </ol>
+                    </nav>
+                    <div class="row mt-10">
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Dirección</label>
+                            <div class="form-group">
+                                <input formControlName="direccion" type="text" class="form-control" />
+                                <div *ngIf="formRegistro.controls['direccion'].invalid && formRegistro.controls['direccion'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-2">
+                            <label>Teléfono</label>
+                            <div class="form-group">
+                                <input formControlName="telefono" type="number" class="form-control" />
+                                <div *ngIf="formRegistro.controls['telefono'].invalid && formRegistro.controls['telefono'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-2">
+                            <label>Celular</label>
+                            <div class="form-group">
+                                <input formControlName="celular" type="number" class="form-control" />
+                                <div *ngIf="formRegistro.controls['celular'].invalid && formRegistro.controls['celular'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-5">
+                            <label>Emáil</label>
+                            <div class="form-group">
+                                <input formControlName="email" type="email" class="form-control" />
+                                <div *ngIf="formRegistro.controls['email'].invalid && formRegistro.controls['email'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row mt-10">
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Url Facebook</label>
+                            <div class="form-group">
+                                <input formControlName="facebook" type="text" class="form-control" placeholder="Si no lo tiene escriba no"/>
+                                <div *ngIf="formRegistro.controls['facebook'].invalid && formRegistro.controls['facebook'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Sitio web</label>
+                            <div class="form-group">
+                                <input formControlName="sitio" type="text" class="form-control" placeholder="Si no lo tiene escriba no"/>
+                                <div *ngIf="formRegistro.controls['sitio'].invalid && formRegistro.controls['sitio'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Departamento</label>
+                            <div class="form-group">
+                                <select formControlName="departamento" class="form-control" (change)="selecDep($event.target.value)">
+                                    <option value="{{d.id}}" *ngFor="let d of listDepartamentos">{{d.nombre}}</option>
+                                </select>
+                                <div *ngIf="formRegistro.controls['departamento'].invalid && formRegistro.controls['departamento'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Municipio</label>
+                            <div class="form-group">
+                                <select formControlName="ciudad" class="form-control">
+                                    <option value="CC">CC</option>
+                                    <option value="NIT">NIT</option>
+                                </select>
+                                <div *ngIf="formRegistro.controls['ciudad'].invalid && formRegistro.controls['ciudad'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-10">
+                       
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Categoría</label>
+                            <div class="form-group">
+                                <select formControlName="categoria" class="form-control">
+                                    <option value="CC">CC</option>
+                                    <option value="NIT">NIT</option>
+                                </select>
+                                <div *ngIf="formRegistro.controls['categoria'].invalid && formRegistro.controls['categoria'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <label>Contraseña</label>
+                            <div class="form-group">
+                                <input formControlName="clave" type="password" class="form-control" placeholder="Si no lo tiene escriba no"/>
+                                <div *ngIf="formRegistro.controls['clave'].invalid && formRegistro.controls['clave'].dirty" class="alert alert-danger" role="alert">
+                                    Campo necesario
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button (click)='registrarEmpresa()' [disabled]="!formRegistro.valid" style="color: white; font-size: 14px;" class="btn btn-primary" ngbTooltip="Registrar Datos Empresa" placement="right">Registrar Empresa</button>
+                </form>
+                
+            
+        </div><br>
+     <app-footer></app-footer>
+        
+</div>
